@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/cyberkallan/hexmind/main/web/static/img/hexmind-logo.png" alt="HexMind Logo" width="200"/>
+  <img src="HexMindLogo.png" width="200"/>
   
   # ⚡ HexMind v3.0 (God-Mode Edition)
   
