@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/cyberkallan/hexmind/main/web/static/img/hexmind-logo.png" alt="HexMind Logo" width="220" style="filter: drop-shadow(0 0 15px rgba(0,255,136,0.5));"/>
+  <img src="HexMindLogo.png" alt="HexMind Logo" width="220" style="filter: drop-shadow(0 0 15px rgba(0,255,136,0.5));"/>
   
   # 💠 HexMind v14.0 (The Singularity Update)
   
