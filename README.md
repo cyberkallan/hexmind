@@ -1,8 +1,8 @@
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/cyberkallan/hexmind/main/web/static/img/hexmind-logo.png" alt="HexMind Logo" width="220"/>
+  <img src="HexMindLogo.png">
 
-  # ⚡ HexMind v3.0 — God-Mode Edition
+  # ⚡ HexMind v2.5.0 — God-Mode Edition
 
   **The Ultimate AI-Powered Autonomous Hacking & Security Companion**
 
