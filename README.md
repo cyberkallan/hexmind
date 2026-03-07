@@ -1,7 +1,7 @@
 <div align="center">
   <img src="HexMindLogo.png" width="200"/>
   
-  # ⚡ HexMind v3.0 (God-Mode Edition)
+  # ⚡ HexMind v2.5 (God-Mode Edition)
   
   **The Ultimate AI-Powered Autonomous Hacking & Security Companion**
 
