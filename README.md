@@ -1,45 +1,92 @@
 <div align="center">
-  <img src="HexMindLogo.png" width="200"/>
-  
-  # ⚡ HexMind v2.5 (God-Mode Edition)
-  
+
+  <img src="https://raw.githubusercontent.com/cyberkallan/hexmind/main/web/static/img/hexmind-logo.png" alt="HexMind Logo" width="220"/>
+
+  # ⚡ HexMind v3.0 — God-Mode Edition
+
   **The Ultimate AI-Powered Autonomous Hacking & Security Companion**
 
-  [![OS - Windows](https://img.shields.io/badge/OS-Windows-blue?logo=windows&logoColor=white)](https://)
-  [![OS - Linux](https://img.shields.io/badge/OS-Linux-black?logo=linux&logoColor=white)](https://)
-  [![OS - Termux](https://img.shields.io/badge/OS-Termux-green?logo=android&logoColor=white)](https://)
-  [![Python - 3.10+](https://img.shields.io/badge/Python-3.10+-yellow?logo=python&logoColor=white)](https://)
-  [![License - MIT](https://img.shields.io/badge/License-MIT-blueviolet)](https://)
-  
+  <br/>
+
+  <!-- Premium CTA Buttons - Official Website & Documentation -->
+  <a href="https://hexmind.space/">
+    <img src="https://img.shields.io/badge/🌐_Official_Website-HexMind_Space-00d4ff?style=for-the-badge&logo=link&logoColor=white&labelColor=0a0a0f" alt="Official Website" />
+  </a>
+  <a href="https://hexmind.space/docs.html">
+    <img src="https://img.shields.io/badge/📚_Documentation-Read_Docs-7c3aed?style=for-the-badge&logo=readthedocs&logoColor=white&labelColor=0a0a0f" alt="Documentation" />
+  </a>
+
+  <br/>
+  <br/>
+
+  <p>
+    <strong>Download HexMind & Skills · Official Docs · One-Click Access</strong>
+  </p>
+
+  <br/>
+
+  [![OS - Windows](https://img.shields.io/badge/OS-Windows-0078d6?style=flat-square&logo=windows&logoColor=white)](https://hexmind.space/)
+  [![OS - Linux](https://img.shields.io/badge/OS-Linux-fcc624?style=flat-square&logo=linux&logoColor=black)](https://hexmind.space/)
+  [![OS - Termux](https://img.shields.io/badge/OS-Termux-3ddc84?style=flat-square&logo=android&logoColor=white)](https://hexmind.space/)
+  [![Python - 3.10+](https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square&logo=python&logoColor=white)](https://hexmind.space/)
+  [![License - MIT](https://img.shields.io/badge/License-MIT-8b5cf6?style=flat-square)](https://hexmind.space/)
+
+  <br/>
+
   <p align="center">
-    Built for Pentesters, Bug Bounty Hunters, and Cybersecurity Professionals.
+    <i>Built for Pentesters, Bug Bounty Hunters, and Cybersecurity Professionals.</i>
   </p>
 
 </div>
 
 ---
 
+<table>
+<tr>
+<td width="50%">
+
 ## 🔮 What is HexMind?
 
-**HexMind** is a terminal-based and web-integrated AI agent designed specifically for advanced cybersecurity operations. It goes far beyond a standard chat wrapper—HexMind features a **ReAct Autonomous Engine**, a premium Local/Cloud hybrid intelligence system, and a **V7 "God-Mode" Web Command Center**.
+**HexMind** is a terminal-based and web-integrated AI agent designed for advanced cybersecurity operations. It goes beyond a standard chat wrapper—featuring a **ReAct Autonomous Engine**, premium Local/Cloud hybrid intelligence, and the **V7 God-Mode Web Command Center**.
 
-Whether you are fuzzing endpoints, analyzing WAFs, exploiting binaries, or looking for an autonomous assistant to run scripts for you, HexMind provides instant, high-fidelity security intelligence.
+Whether you're fuzzing endpoints, analyzing WAFs, exploiting binaries, or need an autonomous assistant to run scripts, HexMind delivers instant, high-fidelity security intelligence.
+
+</td>
+<td width="50%">
+
+## 🔗 Official Links
+
+| Resource | Link |
+|----------|------|
+| **Official Website** | [hexmind.space](https://hexmind.space/) |
+| **Documentation** | [docs.html](https://hexmind.space/docs.html) |
+| **Download HexMind** | [Get from Official Site](https://hexmind.space/) |
+| **Skills & Modules** | [Browse on HexMind Space](https://hexmind.space/) |
+
+</td>
+</tr>
+</table>
+
+---
 
 ## 🚀 Key Capabilities
 
-- **🧠 V9 AGI Core (Autonomous Agent):** Type `agent` to activate the ReAct loop. HexMind will break down your objective, generate scripts, execute them, read the output, and iteratively solve challenges entirely on its own.
-- **🌐 V7 God-Mode Command Center:** A premium, glassmorphic UI accessible via your browser. Features a live reverse-streamed terminal and real-time CPU/RAM hardware telemetry.
-- **📚 V8 Omniscience (RAG Intelligence):** Automatically clones `PayloadsAllTheThings` and `HackTricks` to the local cache, injecting verified payloads into its prompt context to completely eliminate AI hallucination.
-- **🎭 Global Personas:** Type `persona <name>` to override HexMind's core programming with thousands of communication styles from `awesome-chatgpt-prompts`.
-- **💸 API Guard:** HexMind connects to OpenRouter, Anthropic, Gemini, or OpenAI. It automatically detects token-heavy workloads and safely routes you to the **Local Offline Brain** to save costs.
-- **📡 Zero-Day Sentinel:** Actively tail and monitor server logs. HexMind's brain scans incoming streams for anomalous activity and zero-day signatures automatically.
-- **🛡️ Ghost Mode**: Deploys localized honeypots to confuse automated scanners on your target network.
+| Feature | Description |
+|--------|-------------|
+| **🧠 V9 AGI Core** | Type `agent` to activate the ReAct loop. HexMind breaks down objectives, generates scripts, executes them, and iteratively solves challenges autonomously. |
+| **🌐 V7 God-Mode Command Center** | Premium glassmorphic UI in your browser with live reverse-streamed terminal and real-time CPU/RAM telemetry. |
+| **📚 V8 Omniscience (RAG)** | Auto-clones PayloadsAllTheThings & HackTricks to local cache, injecting verified payloads to eliminate AI hallucination. |
+| **🎭 Global Personas** | `persona <name>` overrides core programming with thousands of styles from awesome-chatgpt-prompts. |
+| **💸 API Guard** | Connects to OpenRouter, Anthropic, Gemini, or OpenAI; routes token-heavy workloads to Local Offline Brain to save costs. |
+| **📡 Zero-Day Sentinel** | Tails server logs and scans streams for anomalous activity and zero-day signatures. |
+| **🛡️ Ghost Mode** | Deploys localized honeypots to confuse automated scanners on your target network. |
 
 ---
 
 ## 🛠️ Installation
 
 ### 💻 Windows & Linux
+
 ```bash
 git clone https://github.com/cyberkallan/hexmind.git
 cd hexmind
@@ -47,8 +94,10 @@ pip install -r requirements.txt
 python hexmind.py
 ```
 
-### 📱 Termux (Android Mobile Hacking)
-HexMind is fully optimized for Termux, detecting the environment and delivering Android-compatible payloads.
+### 📱 Termux (Android)
+
+HexMind is optimized for Termux with Android-compatible payloads.
+
 ```bash
 pkg install python git
 git clone https://github.com/cyberkallan/hexmind.git
@@ -56,49 +105,70 @@ cd hexmind
 pip install rich prompt-toolkit requests flask flask-socketio psutil
 python hexmind.py
 ```
-*Note: Some premium features like Speech-To-Text (`voice`) may require additional Termux API packages (`pkg install termux-api`).*
+
+> **Tip:** For Speech-To-Text (`voice`), install Termux API: `pkg install termux-api`
+
+### 🌐 Download from Official Website
+
+For the latest builds and skill packs, visit the official hub:
+
+**[→ https://hexmind.space/](https://hexmind.space/)** · **[→ Documentation](https://hexmind.space/docs.html)**
 
 ---
 
-## 💻 Full Feature Command List
+## 💻 Command Reference
 
-Inside the HexMind terminal, type any of these triggers:
-
-| Command | Action / Module |
-|---------|-----------------|
-| `dashboard` / `portal` | Launches the V7 Web Command Center (Localhost:8888). |
-| `agent` | Toggles the ReAct Autonomous Execution Framework. |
-| `persona <name>` | Adopts a specific personality (e.g., `persona Dan`). |
-| `brain` | Installs/Loads the Offline Local LLM (Ollama/Llama). |
-| `settings` | Cloud Provider API Key configuration menu. |
+| Command | Action |
+|---------|--------|
+| `dashboard` / `portal` | Launch V7 Web Command Center (localhost:8888). |
+| `agent` | Toggle ReAct Autonomous Execution Framework. |
+| `persona <name>` | Adopt a personality (e.g. `persona Dan`). |
+| `brain` | Install/load Offline Local LLM (Ollama/Llama). |
+| `settings` | Cloud provider API key configuration. |
 | `skills` / `skill` | Install custom skill modules and scripts. |
-| `target <IP>` | Set the active workspace and target for operations. |
-| `watch <file.log>` | Start the Zero-Day Sentinel anomaly monitor. |
-| `ghost` | Start the active honeypot & evasion server. |
-| `voice` | Toggle hands-free Speech-To-Text / Text-To-Speech. |
-| `!<cmd>` | Execute a raw system command directly. |
+| `target <IP>` | Set active workspace and target. |
+| `watch <file.log>` | Start Zero-Day Sentinel anomaly monitor. |
+| `ghost` | Start honeypot & evasion server. |
+| `voice` | Toggle Speech-To-Text / Text-To-Speech. |
+| `!<cmd>` | Execute raw system command. |
 
 ---
 
-## 🌐 The God-Mode Command Center (V7 UI)
+## 🌐 V7 God-Mode Command Center
 
-Forget basic CLI tools. Entering `dashboard` spins up a **Premium Flask SPA**:
-- **Glassmorphic Design:** A sleek, dark-themed UI with cyberpunk aesthetics.
-- **Live Terminal Sync:** Every command typed in the web UI streams flawlessly to the terminal backend using `WebSockets` and `xterm.js`.
-- **System Telemetry:** Real-time hardware progress bars monitor the intense workloads HexMind handles during operations.
+Entering `dashboard` spins up a **Premium Flask SPA**:
+
+- **Glassmorphic UI** — Dark theme with cyberpunk aesthetics.
+- **Live Terminal Sync** — Commands in the web UI stream to the backend via WebSockets and xterm.js.
+- **System Telemetry** — Real-time hardware progress bars for operations.
 
 ---
 
-## 🛡️ The Local AI Brain (Free & Private)
+## 🛡️ Local AI Brain (Free & Private)
 
-HexMind operates powerfully offline. If the Cloud API drops or you are dealing with highly sensitive data:
+Run HexMind fully offline for sensitive environments:
+
 1. Type `brain` in the terminal.
-2. HexMind will utilize local models ranging from `smollm2:135m` (extreme speed) to `llama3:8b` (deep reasoning).
-3. The Local Brain seamlessly interprets pentesting, CTF methodology, PrivEsc, and web vulnerabilities completely detached from the internet.
+2. Use local models from `smollm2:135m` (speed) to `llama3:8b` (reasoning).
+3. Interpret pentesting, CTF, PrivEsc, and web vulns with no internet required.
 
 ---
 
 <div align="center">
-  <b>HexMind is continually evolving. Build your intelligence. Rule the terminal.</b><br>
-  <i>Use responsibly. You are solely responsible for your actions.</i>
+
+  **HexMind is continually evolving. Build your intelligence. Rule the terminal.**
+
+  <br/>
+
+  <a href="https://hexmind.space/">
+    <img src="https://img.shields.io/badge/Official_Website-HexMind.Space-00d4ff?style=for-the-badge" alt="Official Website" />
+  </a>
+  <a href="https://hexmind.space/docs.html">
+    <img src="https://img.shields.io/badge/Documentation-Read_Here-7c3aed?style=for-the-badge" alt="Documentation" />
+  </a>
+
+  <br/><br/>
+
+  <sub><i>Use responsibly. You are solely responsible for your actions.</i></sub>
+
 </div>
