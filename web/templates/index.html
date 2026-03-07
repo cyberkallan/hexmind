@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HexMind | God-Mode Command Center</title>
+    <meta name="description" content="HexMind AI — Elite Cybersecurity Terminal & Command Center">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&display=swap"
+        rel="stylesheet">
+    <!-- xterm.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css" />
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/lib/xterm-addon-fit.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Marked.js for Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <!-- AUTH OVERLAY -->
+    <div id="auth-overlay" class="auth-overlay">
+        <div class="auth-box glass-panel">
+            <h2
+                style="color: var(--accent); margin-bottom: 16px; font-family: 'Orbitron', sans-serif; font-size: 18px;">
+                HEXMIND UPLINK</h2>
+            <p style="color: var(--text-dim); margin-bottom: 24px; font-size: 12px;">Terminal locked. Paste God-Mode
+                Token to connect.</p>
+            <input type="password" id="token-input" placeholder="Paste authentication token..."
+                style="width: 100%; padding: 12px; background: rgba(0,0,0,0.5); border: 1px solid var(--accent-glow); color: var(--text); font-family: 'JetBrains Mono', monospace; margin-bottom: 16px; outline: none; border-radius: 4px; font-size: 13px;">
+            <button id="unlock-btn" class="action-btn"
+                style="width: 100%; padding: 12px; font-weight: bold; font-size: 14px;">ESTABLISH LINK</button>
+            <p id="auth-error" style="color: var(--danger); margin-top: 12px; display: none; font-size: 12px;">⚠ Invalid
+                Token</p>
+        </div>
+    </div>
+
+    <div class="glow-bg"></div>
+
+    <!-- SIDEBAR (becomes bottom bar on mobile) -->
+    <div class="nav-sidebar">
+        <div class="nav-logo">H</div>
+        <div class="nav-icon active" data-target="tab-cmd" title="Terminal">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 14H4v-2h8v2zm-4.2-5.9l-4.6-4.6L4.6 6 10.6 12l-6 6-1.4-1.4 4.6-4.7z" />
+            </svg>
+        </div>
+        <div class="nav-icon" data-target="tab-modules" title="Modules">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm5 15h-2v-6H9v6H7v-7.81l5-4.5 5 4.5V18z" />
+            </svg>
+        </div>
+        <div class="nav-icon" data-target="tab-commands" title="Commands">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />
+            </svg>
+        </div>
+        <div class="nav-icon" data-target="tab-docs" title="Docs">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+            </svg>
+        </div>
+        <div class="nav-icon" data-target="tab-settings" title="Settings">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.73 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.49-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- TOP BAR -->
+        <header class="top-bar glass-panel">
+            <div style="display:flex;align-items:center;gap:10px;">
+                <div class="brand">HEXMIND <span class="dim">V13 ULTIMATE</span></div>
+            </div>
+            <div class="status-zone">
+                <div class="sys-status tracking-status">
+                    <span style="color: var(--text-dim); margin-right: 12px; font-size: 10px;">MODEL: <strong
+                            id="activeModelLabel" style="color: var(--accent);">UNKNOWN</strong></span>
+                    <span style="color: var(--text-dim); margin-right: 12px; font-size: 10px;">LATENCY: <strong
+                            id="latencyLabel" style="color: var(--accent);">0ms</strong></span>
+                    <span class="dot blink"></span> <span>CORE ONLINE</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ═══ TERMINAL TAB ════════════════════════════════════════ -->
+        <div class="view-pane active" id="tab-cmd">
+            <div class="panel-grid-cmd">
+                <div class="glass-panel term-wrap">
+                    <div class="panel-head">
+                        <div class="title" style="display:flex;align-items:center;gap:8px;">
+                            COMMAND OPERATIONS
+                            <div class="typing-indicator" id="typingIndicator">
+                                <div class="typing-dots"><span></span><span></span><span></span></div>
+                                <span>thinking...</span>
+                            </div>
+                        </div>
+                        <button class="voice-btn" id="voiceToggle" title="Toggle Voice Input">
+                            🎙️ VOICE
+                        </button>
+                    </div>
+                    <div id="terminal-container"></div>
+                </div>
+
+                <!-- RIGHT RAIL (hidden on mobile) -->
+                <div class="right-rail">
+                    <div class="glass-panel telemetry-card">
+                        <div class="panel-head">SYSTEM METRICS</div>
+                        <div class="chart-container" style="position:relative;height:90px;width:100%;margin:12px 0;">
+                            <canvas id="cpuChart"></canvas>
+                        </div>
+                        <div class="chart-container" style="position:relative;height:90px;width:100%;">
+                            <canvas id="ramChart"></canvas>
+                        </div>
+                        <div class="sys-info" style="margin-top: 14px;">
+                            <p><strong>OS:</strong> <span id="osLabel">UNKNOWN</span></p>
+                            <p><strong>SPEED:</strong> <span id="speedLabel" style="color: var(--accent);">0.0</span>
+                                t/s</p>
+                            <p><strong>KERNEL:</strong> V13-GODMODE</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel telemetry-card">
+                        <div class="panel-head">ACTIVE PROTOCOLS</div>
+                        <div class="proto-list">
+                            <div class="proto-item" id="protoVoice"><span class="dot"></span> Voice Control</div>
+                            <div class="proto-item" id="protoSentinel"><span class="dot"></span> Sentinel (Zero-Day)
+                            </div>
+                            <div class="proto-item" id="protoGhost"><span class="dot"></span> Ghost Mode</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ MODULES TAB ═════════════════════════════════════════ -->
+        <div class="view-pane" id="tab-modules">
+            <div class="glass-panel full-height">
+                <div class="panel-head">COMBAT MODULES & SKILLS</div>
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <h3>🎙️ Voice Control</h3>
+                        <p>Browser-native voice input via Web Speech API. Transcribes voice to terminal commands.</p>
+                        <button class="action-btn toggle-btn" data-skill="voice">TOGGLE</button>
+                    </div>
+                    <div class="module-card">
+                        <h3>👁️ Sentinel</h3>
+                        <p>Zero-Day OSINT daemon actively scraping Exploit-DB & Twitter for CVEs.</p>
+                        <button class="action-btn toggle-btn" data-skill="sentinel">TOGGLE</button>
+                    </div>
+                    <div class="module-card">
+                        <h3>👻 Ghost Mode</h3>
+                        <p>Active counter-intel honeypot deployment to detect and confuse attackers.</p>
+                        <button class="action-btn toggle-btn" data-skill="ghost">TOGGLE</button>
+                    </div>
+                    <div class="module-card">
+                        <h3>🔥 Auto-Pwn</h3>
+                        <p>Metasploit MSFRPC integration for automated footprinting to reverse shell.</p>
+                        <button class="action-btn toggle-btn" data-skill="autopwn">TOGGLE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ COMMANDS TAB ════════════════════════════════════════ -->
+        <div class="view-pane" id="tab-commands">
+            <div class="glass-panel full-height">
+                <div class="panel-head">COMMAND REFERENCE</div>
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <h3>mode</h3>
+                        <p>Switch personalities (hacker, dev, osint, tutor). Example: <code>mode hacker</code></p>
+                    </div>
+                    <div class="module-card">
+                        <h3>brain</h3>
+                        <p>Toggle offline intelligence to save API cost. Loads Llama or Mistral.</p>
+                    </div>
+                    <div class="module-card">
+                        <h3>agent</h3>
+                        <p>Toggle autonomous ReAct execution framework. Allows nested actions.</p>
+                    </div>
+                    <div class="module-card">
+                        <h3>clear / memory</h3>
+                        <p>Manage conversation memory length or clear the active context buffer.</p>
+                    </div>
+                    <div class="module-card">
+                        <h3>autopwn</h3>
+                        <p>Triggers automated reconnaissance and exploitation routines.</p>
+                    </div>
+                    <div class="module-card">
+                        <h3>scan / hash / encode / ip</h3>
+                        <p>Immediate utility commands to process data without LLM hallucination.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ DOCS TAB ════════════════════════════════════════════ -->
+        <div class="view-pane" id="tab-docs">
+            <div class="glass-panel full-height doc-container">
+                <div class="panel-head" style="margin-bottom: 16px;">PROJECT DOCUMENTATION</div>
+                <div id="markdown-content" class="markdown-body">
+                    <div style="text-align:center;color:var(--text-dim);margin-top:40px;">
+                        <span class="dot blink" style="display:inline-block;margin-right:8px;"></span> Loading
+                        documentation...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ SETTINGS TAB ════════════════════════════════════════ -->
+        <div class="view-pane" id="tab-settings">
+            <div class="glass-panel full-height settings-container">
+                <div class="panel-head">CONFIGURATION MATRIX</div>
+                <div class="settings-form" style="margin-top:20px;">
+                    <div class="form-group">
+                        <label>OpenRouter API Key (Cloud AI)</label>
+                        <input type="password" id="cfgProviderKey" placeholder="sk-or-v1-...">
+                    </div>
+                    <div class="form-group">
+                        label>Telegram Bot Token (Remote Control)</label>
+                        <input type="password" id="cfgTelegramToken" placeholder="123456789:ABCdefGHI...">
+                    </div>
+                    <div class="form-group">
+                        <label>X-RapidAPI-Key (Omni-Agent)</label>
+                        <input type="password" id="cfgRapidKey" placeholder="your-rapidapi-key...">
+                    </div>
+                    <button class="action-btn safe-btn" onclick="saveConfig()">SAVE CONFIGURATION</button>
+                </div>
+                <div class="danger-zone">
+                    <h3>DANGER ZONE</h3>
+                    <p>Permanently destroy ~/.hexmind settings, memories, and intelligence databases.</p>
+                    <button class="action-btn nuke-btn" onclick="hardReset()">FACTORY RESET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Frontend Logic -->
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+# Required
+rich>=13.0.0
+prompt-toolkit>=3.0.0
+requests>=2.28.0
+python-dotenv>=1.0.0
+Pillow>=9.5.0
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# For cloud AI providers (install only what you use)
+# pip install anthropic              # Anthropic Claude
+# pip install google-generativeai    # Google Gemini
+# pip install openai                 # OpenAI GPT + DeepSeek
+
+# For local AI (requires ollama installed on host)
+# pip install ollama                 # Local Llama / Mistral
