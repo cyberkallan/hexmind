@@ -1,7 +1,7 @@
 <div align="center">
   <img src="HexMindLogo.png" alt="HexMind Logo" width="220" style="filter: drop-shadow(0 0 15px rgba(0,255,136,0.5));"/>
   
-  # 💠 HexMind v14.0 (The Singularity Update)
+  # 💠 HexMind v2.5 (The Singularity Update)
   
   **The World's Most Advanced Autonomous AI Hacking Collective**
 
@@ -29,7 +29,7 @@
 
 ---
 
-## 🚀 The V14 God-Mode Evolution
+## 🚀 The V2.5 God-Mode Evolution
 
 HexMind v14 introduces **The Singularity Engine**, transforming the assistant into a fully distributed, visual-aware, self-healing hacking collective.
 
