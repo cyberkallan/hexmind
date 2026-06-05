@@ -31,7 +31,7 @@
 
 ## 🚀 The V2.5 God-Mode Evolution
 
-HexMind v14 introduces **The Singularity Engine**, transforming the assistant into a fully distributed, visual-aware, self-healing hacking collective.
+HexMind v 2.5 introduces **The Singularity Engine**, transforming the assistant into a fully distributed, visual-aware, self-healing hacking collective.
 
 ### 🛡️ Autonomous Recon & Defense
 - **🎯 24/7 Bounty Hunter**: Continuous background recon daemon for wildcard domains. Discovers subdomains via crt.sh and probes for vulnerabilities while you sleep.
